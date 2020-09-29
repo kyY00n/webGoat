@@ -28,7 +28,7 @@ HTTP Proxies receive requests from a client and relay them. They also typically 
 
 쨘
 
-<img src="./img/HTTPProxy4.png">
+<img src="./img/httpProxy4.png">
 
 이제 문제에서 시키는 대로 request를 변경해줘야 합니다.
 
@@ -38,12 +38,12 @@ HTTP Proxies receive requests from a client and relay them. They also typically 
 
 밑에 사진처럼 바꿔주면 된다 >\_\_\_\_< 
 
-<img src="./img/HTTPProxy2.png">
+<img src="./img/httpProxy2.png">
 
 그 다음에 Repeat 탭에 들어가서 우리가 수정한 내용으로 Request를 다시 보낸다.
 
 그러면 Response가 돌아오고, 사이트에서는 문제가 풀린 것으로 처리되어 있는 것을 볼 수 있다^_^
 
-<img src="./img/HTTPProxy3.png">
+<img src="./img/httpProxy3.png">
 
 끄 읏!
