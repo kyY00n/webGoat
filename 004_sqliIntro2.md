@@ -94,17 +94,17 @@ String injection을 하기 위해서는 싱글쿼터를 쓰면 돼요. 여기서
 
 지금 우리의 입력이 보내지는 칸은 이렇게 생겼어요.
 
-<img src="./img/sqliIntroString1.png" width="80%">
+<img src="./img/sqliIntroString1.png" width="50%">
 
 우선 injection말고 그냥 정상적으로 내 이름과 TAN을 입력하면
 
-<img src="./img/sqliIntroString2.png" width="80%">
+<img src="./img/sqliIntroString2.png" width="50%">
 
 내 계정 정보만 나오기 때문에 다시하라고 뜨네요.
 
 이제 sqli를 하면 되겠죠. 우선 name에는 그냥 아무거나 쓰고 TAN에서 string injection을 하면 돼요.
 
-<img src="./img/sqliIntroString3.png" width="80%">
+<img src="./img/sqliIntroString3.png" width="50%">
 
 sql문을 보면 싱글쿼터로 TAN이 감싸져있기 때문에 그걸 해결해주기 위해 처음에는 닫아주고, 마지막에는 저절로 닫히도록 열어준 상태로 넣어주면 됩니다.
 
@@ -132,7 +132,7 @@ Remember: Your name is John **Smith** and your current TAN is **3SL99A**.
 
 일단 사람들이 돈을 얼마나 받는지 알아야겠쥬. 그래서 모든 데이터를 보기 위해 지금까지 썼던 sqli를 이용하면 됩니다. 저는 numeric injection을 썼어요. 근데 형태가 안주어져서 아무렇게나 했는데 결과 보니까 select절인 거 같아요.
 
-<img src="./img/sqliIntroUpdate1.png" width="80%">
+<img src="./img/sqliIntroUpdate1.png" width="50%">
 
 정보가 나왔네요. 근데 정말 Smith가 돈을 제일 조금 받네요. 그럼 이제 바꿔봅시다
 
@@ -154,7 +154,7 @@ UPDATE [테이블명] SET [컬럼명] = [원하는 컬럼값] WHERE [조건];
 
 결과는
 
-<img src="./img/sqliIntroUpdate3.png" width="80%">
+<img src="./img/sqliIntroUpdate3.png" width="50%">
 
 쨘~~! 이제 내가 짱이야!
 
@@ -173,6 +173,8 @@ Now you are the top earner in you company. But do you see that? There seems to b
 Better go and *delete it* completely before anyone notices. 
 
 ------
+
+<img src="./img/sqliIntroDelete1.png" width="50%">
 
 검색이라는 거는 like연산자가 사용돼야한다. 검색한 키워드를 **포함**하는 것들을 봐야하기 때문.
 
@@ -194,3 +196,10 @@ DROP TABLE ACCESS_LOG--
 
 이렇게 하면 access_log 테이블이 아예 지워진다! 끝~
 
+입력한 거: `1' drop table access_log--`
+
+결과
+
+<img src="./img/sqliIntroDelete2.png" width="50%">
+
+끄~읏
