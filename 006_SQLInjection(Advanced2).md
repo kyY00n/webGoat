@@ -8,13 +8,13 @@ Have fun!
 
 ### HTTP Packet Interception
 
-<img src="/Users/kayoung/webGoat/img/sqliAdvancedTom1.png" width="50%">
+<img src="./img/sqliAdvancedTom1.png" width="50%">
 
 어쩌라는 것이냐. 하고 아무거나 뚜들겼을 땐 아무 반응이 없었다.
 
 **그렇다. 로그인은 따로 쿼리가 없는 것이다.**
 
-<img src="/Users/kayoung/webGoat/img/sqliAdvancedReg.png" width="40%">
+<img src="./img/sqliAdvancedReg.png" width="40%">
 
 그래서 가입을 했다. 이제부터 페이로드를 보기 위해 버프스위트를 켜야한다.
 
@@ -22,11 +22,11 @@ Proxy에서 Intercept is on 하구 레지스터 버튼을 누르면 버프스위
 
 얘가 요청
 
-<img src="/Users/kayoung/webGoat/img/sqliAdvancedTom2.png" width="60%">
+<img src="./img/sqliAdvancedTom2.png" width="60%">
 
 얘가 응답
 
-<img src="/Users/kayoung/webGoat/img/sqliAdvancedTom3.png" width="60%">
+<img src="./img/sqliAdvancedTom3.png" width="60%">
 
 저 응답을 보면, 지금 내가 `test`라는 아이디를 사용해도 된다는 응답이 왔다. 그렇다면 username_reg가 이미 있는지 없는지 **중복조회**하는 SELECT 문장이 쓰이는 것을 알 수 있다. 우리는 이걸 이용해서 injection을 도전한다^__^
 
@@ -40,19 +40,19 @@ Proxy에서 Intercept is on 하구 레지스터 버튼을 누르면 버프스위
 
   : **중복이 아닐 때** 어떻게 나오는지 확인해본거임.
 
-  <img src="/Users/kayoung/webGoat/img/sqliBlind2.png" width="80%">
+  <img src="./img/sqliBlind2.png" width="80%">
 
 - **싱글쿼터** 써보기: 닫혀있는지 아닌지 확인
 
-  <img src="/Users/kayoung/webGoat/img/sqliBlind3.png" width="80%">
+  <img src="./img/sqliBlind3.png" width="80%">
 
 - **파이프** 써보기: Concatenation 가능 여부, 필터링되는지 확인해보기
 
-  <img src="/Users/kayoung/webGoat/img/sqliBlind4.png" width="80%">
+  <img src="./img/sqliBlind4.png" width="80%">
 
 - `user_name='tom'` 써보기: 그냥.
 
-  <img src="/Users/kayoung/webGoat/img/sqliBlind5.png" width="80%">
+  <img src="./img/sqliBlind5.png" width="80%">
 
 ```sql
 SELECT * FROM member WHERE username=''
@@ -137,7 +137,7 @@ tom'+and+ascii(substring(password,1,1))>80-- //이진탐색! 대충 80부터 시
 
 ...ㅋ 그래서 이걸로 로그인을 하면
 
-<img src="/Users/kayoung/webGoat/img/sqliBlind6.png" width="80%">
+<img src="./img/sqliBlind6.png" width="80%">
 
 와앙~~~ 컴쁠릿
 
