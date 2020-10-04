@@ -58,9 +58,9 @@ Warning: Only one of these fields is susceptible to SQL Injection. You need to f
 
 얘도 마찬가지로 맨 뒤에서 `or [true가 되는 문장] ` 을 추가해주면 끝입니다.
 
-<img src="./img/sqliIntro9-1.png" width="80%">
+<img src="./img/sqliIntro9-1.png" width="50%">
 
-<img src="./img/sqliIntro9-2.png" width="80%">
+<img src="./img/sqliIntro9-2.png" width="50%">
 
 이런 식으로 하면 끝납니다요.
 
@@ -174,7 +174,7 @@ Better go and *delete it* completely before anyone notices.
 
 ------
 
-<img src="./img/sqliIntroDelete1.png" width="50%">
+<img src="./img/sqliIntroDelete1.png" width="60%">
 
 검색이라는 거는 like연산자가 사용돼야한다. 검색한 키워드를 **포함**하는 것들을 봐야하기 때문.
 
@@ -200,6 +200,6 @@ DROP TABLE ACCESS_LOG--
 
 결과
 
-<img src="./img/sqliIntroDelete2.png" width="50%">
+<img src="./img/sqliIntroDelete2.png" width="60%">
 
 끄~읏
