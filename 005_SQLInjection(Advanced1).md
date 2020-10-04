@@ -1,4 +1,4 @@
-#  SQL Injection (advanced)
+#  SQL Injection (advanced1)
 
 ## Goals
 
@@ -155,20 +155,3 @@ CREATE TABLE user_system_data (userid int not null primary key,
 
 ------
 
-We now explained the basic steps involved in an SQL injection. In this assignment you will need to combine all things we explained in the SQL lessons.
-
-Goal: **Can you login as Tom?**
-
-Have fun!
-
-<img src="./img/sqliAdvancedTom1.png" width="50%">
-
-
-
-<img src="./img/sqliAdvancedReg.png" width="40%">
-
-<img src="./img/sqliAdvancedTom2.png" width="60%">
-
-<img src="./img/sqliAdvancedTom3.png" width="60%">
-
-저 응답을 보면, username_reg가 이미 있는지 없는지 조회하는 sql이 쓰이는 것을 알 수 있다. 그래서 우리는 저 뒤에 query chaining을 써서 우리가 원하는 Tom의 비밀번호를 알아낸다!
