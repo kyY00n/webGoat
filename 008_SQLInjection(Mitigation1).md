@@ -76,7 +76,7 @@ PreparedStatement ps = null;
 RecordSet rs = null;
 try {
   pUserName = request.getParameter("UserName");
-  if ( isUsernameValid (pUserName) ) {
+  if ( isUsernameValid(pUserName) ) {
     ps = conn.prepareStatement("SELECT * FROM user_table WHERE username = ? ");
     ps.setString(1, pUserName);
     rs = ps.execute();
@@ -123,9 +123,10 @@ public static String loadAccount() {
   String data = null;
   String query = "SELECT first_name, last_name, acct_id, balance FROM user_data WHERE acct_id = ?";
   
-  try (Connection connection = null; PreparedStatement statement = connection.prepareStatement(query)) {
+  try (Connection connection = null;
+       PreparedStatement statement = connection.prepareStatement(query)) {
     statement.setString(1, accountID);
-    ResultSet results = statement.executeQuery();
+    ResultSet results = statement.executeQuery(); //java snippet에서는 execute()
     if (results != null && results.first()) {
       results.last(); // Only one record should be returned for this query
       if(results.getRoud() <= 2) {
@@ -177,9 +178,9 @@ Now it is time to write your own code! Your task is to use JDBC to connect to a 
 
 **Reauirements**:
 
-- connect to a database
+- connect to a database => Connection 객체를 만든다.
 - perform a query on the database which is immune to SQL injection attacks
-- your query needs to contain at least one string parameter
+- your query needs to contain at least one `String` parameter
 
 이 문제 좀 이상하다. 파라미터를 하드코딩해야된다.
 
